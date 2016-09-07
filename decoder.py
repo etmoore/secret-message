@@ -1,10 +1,13 @@
 import sys
 import os
 
-# Make a list of all the files in the specified path
 encrypted_path = sys.argv[1]
-file_list = os.listdir(encrypted_path)
 
-# Iterate over each file
-    # remove the numbers from the filename
-    # save the new file name
+def rename_files():
+
+    file_list = os.listdir(encrypted_path)
+    os.chdir(r"/Users/evanmoore/workspace/udacity/secret-message/prank")
+    for file_name in file_list:
+        os.rename(file_name, file_name.translate(None, '1234567890'))
+
+rename_files()
